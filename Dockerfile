@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     vim \
     curl \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/*
 
 # ── Users ────────────────────────────────────────────────────────────────────
@@ -78,7 +79,7 @@ RUN mkdir -p /var/run/samba /var/log/samba
 
 # ── Entrypoint ───────────────────────────────────────────────────────────────
 COPY scripts/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN dos2unix /entrypoint.sh && chmod +x /entrypoint.sh
 
 EXPOSE 21 22 139 445
 

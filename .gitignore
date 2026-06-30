@@ -1,0 +1,13 @@
+# Docker build cache
+.docker/
+
+# Private keys (KHÔNG đẩy key thật lên GitHub)
+*.pem
+*.key
+rogers_rsa
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store

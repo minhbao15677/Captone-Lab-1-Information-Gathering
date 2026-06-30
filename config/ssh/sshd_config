@@ -1,0 +1,31 @@
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+SyslogFacility AUTH
+LogLevel INFO
+
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 6
+
+# Key-based auth only — no passwords for SSH
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitEmptyPasswords no
+KbdInteractiveAuthentication no
+UsePAM yes
+
+# Only rogers can SSH in; andrew is FTP-only
+AllowUsers rogers
+
+AllowTcpForwarding no
+X11Forwarding no
+PrintMotd no
+
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+Banner /etc/ssh/banner.txt

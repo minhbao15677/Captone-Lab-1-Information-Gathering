@@ -1,0 +1,12 @@
+services:
+  lab01:
+    build: .
+    container_name: capstone-lab-01
+    hostname: labsrv
+    ports:
+      - "21:21"
+      - "22:22"
+      - "139:139"
+      - "445:445"
+      - "40000-40100:40000-40100"
+    restart: unless-stopped

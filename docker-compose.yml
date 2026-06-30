@@ -4,9 +4,9 @@ services:
     container_name: capstone-lab-01
     hostname: labsrv
     ports:
-      - "21:21"
-      - "22:22"
-      - "139:139"
-      - "445:445"
+      - "2121:21"
+      - "2222:22"
+      - "1139:139"
+      - "4445:445"
       - "40000-40100:40000-40100"
     restart: unless-stopped
